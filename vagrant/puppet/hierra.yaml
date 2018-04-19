@@ -1,0 +1,9 @@
+---
+version: 5
+defaults:  # Used for any hierarchy level that omits these keys.
+  data_hash: yaml_data  # Use the built-in YAML backend.
+  datadir: /var/www/vagrant
+
+hierarchy:
+  - name: Common
+    path: config.yaml

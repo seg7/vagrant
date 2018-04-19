@@ -1,0 +1,35 @@
+---
+vm:
+    box: bento/ubuntu-16.04
+    memory: '1024'
+    cpus: '1'
+
+network:
+    hostname: 'apigility.vm'
+    private_network: 192.168.7.7
+    aliases:
+      - 'apigility.local'
+project:
+    folder: /var/www
+puppet:
+    includes:
+      - add_php
+      - add_apache
+      - add_mariadb
+      - add_vendor
+      #- add_migrations
+      - add_ohmyzsh
+      - add_nodejs
+    add_php:
+      version: '7.1'
+    add_apache:
+      docroot: /var/www/public
+    add_mariadb:
+      databases:
+#        dbname:
+#          ensure: 'present'
+#          charset: 'utf8'
+shared:
+    main: ../bo3.e-goi.com
+    frontend: ../www3.e-goi.com
+    admin: ../admin.e-goi.com
