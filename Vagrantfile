@@ -38,7 +38,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.manifests_path = "vagrant/puppet/manifests"
     puppet.module_path = "vagrant/puppet/modules"
     puppet.hiera_config_path = "vagrant/puppet/hierra.yaml"
-    puppet.options = ['--verbose --debug']
+    puppet.options = ["#{data['puppet']['options']}"]
   end
 
 end

@@ -5,13 +5,15 @@ vm:
     cpus: '1'
 
 network:
-    hostname: 'apigility.vm'
+    hostname: 'FQDN'
     private_network: 192.168.7.7
     aliases:
-      - 'apigility.local'
+      #- 'ALIAS1'
+      #- 'ALIAS2'
 project:
     folder: /var/www
 puppet:
+    options: '--verbose --debug'
     includes:
       - add_php
       - add_apache
@@ -26,10 +28,9 @@ puppet:
       docroot: /var/www/public
     add_mariadb:
       databases:
-#        dbname:
+#        DBNAME1:
 #          ensure: 'present'
 #          charset: 'utf8'
-shared:
-    main: ../bo3.e-goi.com
-    frontend: ../www3.e-goi.com
-    admin: ../admin.e-goi.com
+#        DBNAME2:
+#          ensure: 'present'
+#          charset: 'utf8'
