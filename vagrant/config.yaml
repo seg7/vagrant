@@ -8,7 +8,7 @@ network:
     hostname: 'FQDN'
     private_network: 192.168.7.7
     aliases:
-      #- 'ALIAS1'
+      - 'ALIAS1'
       #- 'ALIAS2'
 project:
     folder: /var/www

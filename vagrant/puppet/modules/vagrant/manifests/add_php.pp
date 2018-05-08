@@ -58,6 +58,10 @@ class vagrant::add_php() {
         provider => 'apt',
         package_prefix  => "php${version}-",
       },
+      ssh2 => {
+        provider => 'apt',
+        package_prefix  => "php-",
+      },
       xdebug => {
         provider => 'apt',
         package_prefix  => "php${version}-",
