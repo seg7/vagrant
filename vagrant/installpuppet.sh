@@ -25,3 +25,6 @@ fi
 if [[ ! -d "$BASEDIR/vagrant/puppet/modules/ohmyzsh" ]]; then
     puppet module install zanloy-ohmyzsh --modulepath "$BASEDIR/vagrant/puppet/modules"    # --version 1.0.3
 fi
+if [[ ! -d "$BASEDIR/vagrant/puppet/modules/mailhog" ]]; then
+    puppet module install ftaeger-mailhog --modulepath "$BASEDIR/vagrant/puppet/modules"   # --version 1.1.0
+fi

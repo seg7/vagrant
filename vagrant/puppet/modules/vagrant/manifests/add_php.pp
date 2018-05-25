@@ -1,6 +1,7 @@
 class vagrant::add_php() {
 
   $version = lookup('puppet.add_php.version')
+  $hostname = lookup('network.hostname')
 
   class { '::php::globals':
     php_version => $version,
@@ -15,6 +16,7 @@ class vagrant::add_php() {
       'PHP/display_errors'       => 'On',
       'PHP/error_reporting'      => 'E_ALL & ~E_USER_DEPRECATED',
       'Date/date.timezone'       => 'Europe/Lisbon',
+      'mail function/sendmail_path' => "/usr/bin/mailhog sendmail mailhog@$hostname",
     },
     extensions => {
       bcmath => {

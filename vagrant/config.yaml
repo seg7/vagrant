@@ -22,6 +22,7 @@ puppet:
       #- add_migrations
       - add_ohmyzsh
       - add_nodejs
+      - add_mailhog
     add_php:
       version: '7.1'
     add_apache:
