@@ -19,7 +19,7 @@ puppet:
       - add_apache
       - add_mariadb
       - add_vendor
-      #- add_migrations
+      - add_migrations
       - add_ohmyzsh
       - add_nodejs
       - add_mailhog

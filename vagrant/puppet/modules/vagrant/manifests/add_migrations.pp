@@ -1,11 +1,14 @@
 class vagrant::add_migrations() {
 
-  $basepath  = lookup('project.folder')
+  $basedir  = lookup('project.folder')
 
   exec { 'php artisan migrate':
     command => 'php artisan migrate',
-    cwd => $basepath,
-    path => '/usr/bin',
+    cwd     => $basedir,
+    path    => '/bin:/usr/bin:/usr/local/bin',
+    onlyif  => [
+      "test -e $basedir/artisan"
+    ],
     require => [
       Class['::vagrant::add_php'],
       Class['::vagrant::add_apache'],

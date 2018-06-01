@@ -12,7 +12,7 @@ class vagrant::add_vendor() {
       "test -e $basedir/composer.json"
     ],
     timeout     => 0,
-    require => [
+    require     => [
       Class['::vagrant::add_php'],
       Class['::vagrant::add_apache'],
       Class['::vagrant::add_mariadb'],
