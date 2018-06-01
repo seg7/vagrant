@@ -41,4 +41,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.options = ["#{data['puppet']['options']}"]
   end
 
+  if Vagrant.has_plugin?("vagrant-reload")
+    config.vm.provision :reload
+  end
+
 end
