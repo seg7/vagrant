@@ -10,3 +10,4 @@ vagrant/puppet/Puppetfile.lock
 vagrant/puppet/.librarian/
 vagrant/puppet/modules/*
 !vagrant/puppet/modules/.gitkeep
+!/vagrant/puppet/modules/.gitignore
