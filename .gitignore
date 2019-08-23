@@ -5,5 +5,7 @@ data/cache/*
 !data/cache/.gitkeep
 phpunit.xml
 .idea
-.tmp/
-modules/
+vagrant/puppet/.tmp/
+vagrant/puppet/modules/
+/vagrant/puppet/Puppetfile.lock
+/vagrant/puppet/.librarian/
