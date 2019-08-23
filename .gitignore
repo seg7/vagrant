@@ -9,3 +9,4 @@ phpunit.xml
 /vagrant/puppet/Puppetfile.lock
 /vagrant/puppet/.librarian/
 /vagrant/puppet/modules/
+!/vagrant/puppet/modules/.gitkeep
