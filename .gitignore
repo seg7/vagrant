@@ -7,5 +7,6 @@ phpunit.xml
 .idea
 vagrant/puppet/.tmp/
 /vagrant/puppet/Puppetfile.lock
+!/vagrant/puppet/.gitkeep
 /vagrant/puppet/.librarian/
-!/vagrant/puppet/modules/
+/vagrant/puppet/modules/*
