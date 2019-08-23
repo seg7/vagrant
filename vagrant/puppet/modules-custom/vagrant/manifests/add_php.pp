@@ -47,10 +47,12 @@ class vagrant::add_php() {
         provider => 'apt',
         package_prefix  => "php${version}-",
       },
+      /* // missing at leat 1.0.2 for php 7.4 deprecated
       mcrypt => {
         provider => 'apt',
         package_prefix  => "php${version}-",
       },
+      */
       mysql => {
         provider => 'apt',
         package_prefix  => "php${version}-",

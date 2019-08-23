@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+forge "https://forgeapi.puppetlabs.com"
+
+mod 'puppetlabs/stdlib', '4.25.1'
+mod 'puppet/php', '6.0.2'
+mod 'puppetlabs/apache', '5.0.0'
+mod 'puppetlabs/mysql', '10.1.0'
+mod 'puppet/nodejs', '7.0.1'
+mod 'zanloy/ohmyzsh', '1.0.3'
+mod 'ftaeger/mailhog', '1.1.0'
+mod 'puppetlabs/motd', '1.2.0'

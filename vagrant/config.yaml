@@ -5,7 +5,7 @@ vm:
     cpus: '1'
 
 network:
-    hostname: 'FQDN'
+    hostname: 'www.symfony.local'
     private_network: 192.168.7.7
     aliases:
       - 'ALIAS1'
@@ -23,8 +23,9 @@ puppet:
       - add_ohmyzsh
       - add_nodejs
       - add_mailhog
+      - add_motd
     add_php:
-      version: '7.1'
+      version: '7.3'
     add_apache:
       docroot: /var/www/public
     add_mariadb:

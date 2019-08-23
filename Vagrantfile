@@ -36,7 +36,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :"shell", path: "vagrant/installpuppet.sh", env: {"BASEDIR" => "#{data['project']['folder']}"}
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "vagrant/puppet/manifests"
-    puppet.module_path = "vagrant/puppet/modules"
+    puppet.module_path = ["vagrant/puppet/modules","vagrant/puppet/modules-custom"]
     puppet.hiera_config_path = "vagrant/puppet/hierra.yaml"
     puppet.options = ["#{data['puppet']['options']}"]
   end

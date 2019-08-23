@@ -14,6 +14,7 @@ class vagrant::add_apache() {
 
   class { 'apache::mod::rewrite': }
   class { 'apache::mod::actions': }
+  #class { 'apache::mod_proxy_fcgi': }
   #class { 'apache::mod::php': }
 
   apache::fastcgi::server { 'php':
