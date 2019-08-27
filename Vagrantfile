@@ -24,7 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       server_aliases.push(server_alias)
     end
     config.hostsupdater.aliases = server_aliases
-    config.hostsupdater.remove_on_suspend = false
+    config.hostsupdater.remove_on_suspend = true
   end
 
   config.vm.provider "virtualbox" do |v|

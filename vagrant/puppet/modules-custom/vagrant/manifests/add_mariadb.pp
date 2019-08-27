@@ -1,5 +1,14 @@
 class vagrant::add_mariadb() {
 
+  $username = lookup('puppet.add_mariadb.username') ? {
+    undef   => inline_template("<%= `tr -cd A-Z0-9  < /dev/urandom | fold -w15 | head -n1` -%>").strip,
+    default => lookup('puppet.add_mariadb.username')
+  }
+  $password = lookup('puppet.add_mariadb.password') ? {
+    undef   => inline_template("<%= `tr -cd A-Z0-9  < /dev/urandom | fold -w15 | head -n1` -%>").strip,
+    default => lookup('puppet.add_mariadb.password')
+  }
+
   include apt
 
   #apt::conf { 'unauth':
@@ -21,31 +30,34 @@ class vagrant::add_mariadb() {
     },
   }
 
+
+
   class {'::mysql::server':
     package_name       => 'mariadb-server',
     #package_ensure    => '10.1.14+maria-1~trusty',
     service_name       => 'mysql',
     #root_password     => 'e5z@gdQtSdHf',
     create_root_user   => false,
-    create_root_my_cnf => false,    users => {
-      'vagrant@%' => {
+    create_root_my_cnf => false,
+    users => {
+      "$username@%" => {
         ensure                   => 'present',
         max_connections_per_hour => '0',
         max_queries_per_hour     => '0',
         max_updates_per_hour     => '0',
         max_user_connections     => '0',
-        password_hash            => mysql_password("vagrant"),
+        password_hash            => mysql_password("$password"),
         tls_options              => ['NONE'],
       },
     },
 
     grants => {
-      'vagrant@%/*.*' => {
+      "$username@%/*.*" => {
         ensure     => 'present',
         options    => ['GRANT'],
         privileges => ['ALL'],
         table      => '*.*',
-        user       => 'vagrant@%',
+        user       => "$username@%",
       },
     },
     override_options => {

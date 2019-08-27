@@ -1,2 +1,4 @@
-Listening on:   http://<%= @hostname %>.<%= @domain %>
-Mailhog on:     http://<%= @hostname %>.<%= @domain %>:8025
+Listening on:   http://<%= scope().call_function('lookup',['network.hostname']) %> @<%= scope().call_function('lookup',['puppet.add_apache.docroot']) %> PHP <%= scope().call_function('lookup',['puppet.add_php.version']) %>.x
+Mailhog on:     http://<%= scope().call_function('lookup',['network.hostname']) %>:8025
+MySQL username: <%= scope().call_function('lookup',['puppet.add_mariadb.username']) %>
+MySQL password: <%= scope.lookupvar('vagrant::add_mariadb::password') %>

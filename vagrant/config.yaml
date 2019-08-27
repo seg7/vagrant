@@ -5,7 +5,7 @@ vm:
     cpus: '1'
 
 network:
-    hostname: 'www.symfony.local'
+    hostname: 'FQDN'
     private_network: 192.168.7.7
     aliases:
       - 'ALIAS1'
@@ -29,6 +29,8 @@ puppet:
     add_apache:
       docroot: /var/www/public
     add_mariadb:
+      username: vagrant
+      password: vagrant
       databases:
 #        DBNAME1:
 #          ensure: 'present'
